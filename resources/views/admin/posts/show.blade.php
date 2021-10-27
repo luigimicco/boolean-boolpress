@@ -6,6 +6,10 @@
     <div class="container">
         <h1>{{ $post->title }}</h1>
         <h4>Categoria: @if ($post->category){{ $post->category->name }} @else nessuna categoria @endif</h4>
+        @if ($post->cover)
+            <img src="{{ asset('storage/' . $post->cover) }}">
+        @endif
+
         <p>{{ $post->content }}</p>
         <address>Pubblicato il: {{ $post->getFormattedDate('created_at') }}</address>
         <div class="d-flex justify-content-end">

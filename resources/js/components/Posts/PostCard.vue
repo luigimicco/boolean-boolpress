@@ -7,8 +7,8 @@
       </address>
     </div>
     <div class="card-body">
+      <img v-if="post.cover" :src="'./storage/' + post.cover">
       <p>{{ post.content }}</p>
-      <img :src="'./storage/' + post.cover">
     </div>
     <div
       class="card-footer bg-white d-flex justify-content-end align-items-center"

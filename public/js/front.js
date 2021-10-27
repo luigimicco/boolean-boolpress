@@ -38765,9 +38765,11 @@ var render = function() {
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "card-body" }, [
-      _c("p", [_vm._v(_vm._s(_vm.post.content))]),
+      _vm.post.cover
+        ? _c("img", { attrs: { src: "./storage/" + _vm.post.cover } })
+        : _vm._e(),
       _vm._v(" "),
-      _c("img", { attrs: { src: "./storage/" + _vm.post.cover } })
+      _c("p", [_vm._v(_vm._s(_vm.post.content))])
     ]),
     _vm._v(" "),
     _c(
