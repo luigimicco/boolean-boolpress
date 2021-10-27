@@ -8,6 +8,7 @@
     </div>
     <div class="card-body">
       <p>{{ post.content }}</p>
+      <img :src="'./storage/' + post.cover">
     </div>
     <div
       class="card-footer bg-white d-flex justify-content-end align-items-center"

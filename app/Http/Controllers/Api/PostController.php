@@ -41,6 +41,7 @@ class PostController extends Controller
     public function show($id)
     {
         $post = Post::find($id);
+        
         if ($post) return response()->json($post);
         else return response('', 404);
     }

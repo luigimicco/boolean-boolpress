@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {
 
-    protected $fillable = ['title', 'content', 'slug', 'image', 'category_id', 'user_id'];
+    protected $fillable = ['title', 'content', 'slug', 'image', 'category_id', 'user_id', 'cover'];
 
     public function getFormattedDate($column, $format = 'd-m-Y H:i:s')
     {

@@ -137,8 +137,10 @@ class PostController extends Controller
         $data = $request->all();
         // $post->fill($data);
         $data['slug'] = Str::slug($data['title'], '-');
+        $img_path = Storage::put('public', $data['cover']);
+        $data['cover'] = $img_path;        
 
-        if (!array_key_exists('tags', $data) && count($post->tags)) $post->tags()->detach();
+        if (!array_key_exists('tags', $data) && ($post->tags) && count($post->tags)) $post->tags()->detach();
         else $post->tags()->sync($data['tags']);
 
         $post->update($data);
