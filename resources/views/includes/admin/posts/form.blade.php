@@ -1,8 +1,8 @@
 @if ($post->exists)
-    <form method="POST" action="{{ route('admin.posts.update', $post->id) }}">
+    <form method="POST" enctype="multipart/form-data" action="{{ route('admin.posts.update', $post->id) }}">
         @method('PATCH')
     @else
-        <form method="POST" action="{{ route('admin.posts.store') }}">
+        <form method="POST" enctype="multipart/form-data" action="{{ route('admin.posts.store') }}">
 @endif
 @csrf
 <div class="form-group">
@@ -25,6 +25,8 @@
         </div>
     @enderror
 </div>
+
+
 <div class="form-group">
     <label for="image">Immagine</label>
     <input type="text" class="form-control @error('image') is-invalid @enderror" id="image" name="image"
@@ -35,6 +37,20 @@
         </div>
     @enderror
 </div>
+
+<div class="form-group">
+    <label for="cover">Cover del post</label>
+    <input type="file" class="form-control @error('cover') is-invalid @enderror" id="cover" name="cover"
+        placeholder="cover del post" >
+    @error('cover')
+        <div class="invalid-feedback">
+            {{ $message }}
+        </div>
+    @enderror
+</div>
+
+
+
 <div class="form-group">
     <label for="category_id">Categoria</label>
     <select class="form-control @error('category_id') is-invalid @enderror" id="category_id" name="category_id">

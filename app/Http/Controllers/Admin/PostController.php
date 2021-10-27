@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;
-
+use Illuminate\Support\Facades\Storage;
 
 class PostController extends Controller
 {
@@ -68,6 +68,9 @@ class PostController extends Controller
         $post->fill($data);
 
         $post->slug = Str::slug($post->title, '-');
+
+        $img_path = Storage::put('public', $data['cover']);
+        $post->cover = $img_path;
 
         $post->save();
 

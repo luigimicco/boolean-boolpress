@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class UpdatePostsTabel extends Migration
+class AddcoverPostsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,7 @@ class UpdatePostsTabel extends Migration
     public function up()
     {
         Schema::table('posts', function (Blueprint $table) {
-            //
+            $table->string('cover')->nullable()->after('slug');
         });
     }
 
@@ -26,7 +26,7 @@ class UpdatePostsTabel extends Migration
     public function down()
     {
         Schema::table('posts', function (Blueprint $table) {
-            //
+            $table->dropColumn('cover');
         });
     }
 }
