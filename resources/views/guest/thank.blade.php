@@ -11,6 +11,13 @@
 
                     <h1>Grazie</h1>
 
+                    @if (session('alert-message'))
+                    <div class="alert alert-{{ session('alert-type') }}">
+                        {{ session('alert-message') }}
+                    </div>
+                    @endif
+
+
                 </div>
             </div>
         </div>

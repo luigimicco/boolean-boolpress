@@ -30,7 +30,7 @@ class MailController extends Controller
         $new_lead->save();
 
         Mail::to('account@mail.it')->send(new SendNewMail($new_lead));
-        return redirect()->route('contatti.thank'); 
+        return redirect()->route('contatti.thank')->with('alert-type', 'success')->with('alert-message', $new_lead->name); 
 
     }
 
