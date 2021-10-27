@@ -54,7 +54,8 @@ class PostController extends Controller
             'content' => 'required|string',
             'image' => 'string',
             'category_id' => 'nullable|exists:categories,id',
-            'tags' => 'nullable|exists:tags,id'
+            'tags' => 'nullable|exists:tags,id',
+            'cover' => 'image'
         ], [
             'required' => 'Il campo :attribute è obbligatorio',
             'min' => 'Il minimo di caratteri per il campo :attribute è :min',
@@ -125,7 +126,8 @@ class PostController extends Controller
             'content' => 'required|string',
             'image' => 'string',
             'category_id' => 'nullable|exists:categories,id',
-            'tags' => 'nullable|exists:tags,id'
+            'tags' => 'nullable|exists:tags,id',
+            'cover' => 'image'
 
         ], [
             'required' => 'Questo campo è obbligatorio',

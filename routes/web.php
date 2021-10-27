@@ -14,6 +14,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 
+Route::get('/contatti', 'MailController@contact')->name('contatti');
+Route::post('/contatti', 'MailController@handleContactForm')->name('contatti.invio');
+Route::get('/tks', 'MailController@thank')->name('contatti.thank');
+
 Auth::routes(['register' => true]);
 
 
